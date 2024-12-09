@@ -1,4 +1,4 @@
-package co.za.tbh.gamestoreapi;
+package co.za.tbh.store;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
