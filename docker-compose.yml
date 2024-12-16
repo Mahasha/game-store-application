@@ -3,14 +3,19 @@ services:
     container_name: game-store-postgres
     image: postgres:17.2
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD:
+      # Read these values from environment variables instead of hard-coding them
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+
       PGDATA: "/var/lib/postgresql/data"
-      POSTGRES_DB: "game_store_app_db"
+
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
     ports:
       - "5432:5432"
+
 volumes:
   postgres_data:
     driver: local
